@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    width: 100%;
+}
+
+header {
+    background-color: cadetblue;
+    width: 100%;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
