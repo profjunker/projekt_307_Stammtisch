@@ -4,12 +4,13 @@
 }
 
 header {
-    background-color: cadetblue;
+    background-color: #101010;
     width: 100%;
+    padding: 20px;
 }
 
 .logo {
-    width: 100px;
+    width: 350px;
     height: auto;
 }
 
