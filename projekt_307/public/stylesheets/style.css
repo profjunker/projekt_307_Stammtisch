@@ -57,4 +57,13 @@ header {
 }
 
 
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('hero.jpg');
+    background-size: cover; /* Bild skaliert sich, um den gesamten Bereich zu füllen */
+    background-position: center; /* Zentriert das Bild im Container */
+    background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
+}
+
 
