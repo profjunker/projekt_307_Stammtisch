@@ -14,15 +14,8 @@ header {
     height: auto;
 }
 
-
-
-
-.footer-logo img {
-    max-width: 150px; /* Logo-Größe anpassen */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.footer-logo img:hover {
-    transform: scale(1.1); /* Kleiner Hover-Effekt */
+.footer{
+    display: flex;
+    align-items:center ;
+    background-color: #101010;
 }
