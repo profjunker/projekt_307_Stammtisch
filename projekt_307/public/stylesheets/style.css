@@ -6,7 +6,7 @@
 header {
     background-color: #101010;
     width: 100%;
-    padding: 50px;
+    padding: 20px;
 }
 
 .logo {
@@ -67,3 +67,9 @@ header {
 }
 
 
+
+.footer{
+    display: flex;
+    justify-content:center ;
+    background-color: #101010;
+}
