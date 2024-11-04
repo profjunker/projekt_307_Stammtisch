@@ -14,6 +14,33 @@ header {
     height: auto;
 }
 
+/* Verstecke das Menü standardmäßig */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #101010;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Stil für die Menülinks */
+.nav-links a {
+    color: white;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    font-size: 100px;
+    font-family: Marlboro;
+    text-decoration: none;
+    display: block;
+}
+
+/* Stil für das Burger-Icon */
+.burger-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /* Style the navigation menu */
 .topnav {
     overflow: hidden;
