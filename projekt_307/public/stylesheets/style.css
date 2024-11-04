@@ -36,15 +36,17 @@ header {
     color: white;
     text-decoration: none;
     display: block;
+    font-size: 100px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    font-family: Marlboro;
 }
 
 /* Stil für das Burger-Icon */
 .burger-icon {
-    font-size: 40px;
+    font-size: 60px;
     cursor: pointer;
     color: white;
-    display: flex;
-    justify-items: flex-end;
 }
 
 
