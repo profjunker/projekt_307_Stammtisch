@@ -1,12 +1,26 @@
 * {
-    margin: 0px;
+    margin: 0;
     width: 100%;
+}
+
+body {
+    background-color: #272727;
+}
+
+main {
+    padding: 30px;
 }
 
 header {
     background-color: #101010;
     width: 100%;
     padding: 50px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -21,7 +35,9 @@ header {
     background-color: #101010;
     top: 50px;
     width: 100%;
+    height: 100vh;
     text-align: center;
+    padding-top: 50px;
 }
 
 /* Stil für die Menülinks */
@@ -30,46 +46,23 @@ header {
     padding-bottom: 60px;
     padding-top: 60px;
     font-size: 100px;
-    font-family: Marlboro;
+    font-family: "Marlboro", "regular";
     text-decoration: none;
     display: block;
+}
+
+.burger span i {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Stil für das Burger-Icon */
 .burger-icon {
-    font-size: 24px;
+    font-size: 70px;
     cursor: pointer;
-}
-
-/* Style the navigation menu */
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
-}
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-    display: none;
-}
-
-/* Style navigation menu links */
-.topnav a {
     color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
 }
 
-/* Style the hamburger menu */
-.topnav a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
@@ -92,4 +85,6 @@ header {
     justify-content:center ;
     background-color: #101010;
     bottom: 0;
+    width: 100%;
+    padding: 50px;
 }
