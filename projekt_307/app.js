@@ -35,9 +35,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use{(req
-  req.db_connection = db_connection;
-)};
+//app.use{(req
+//  req.db_connection = db_connection;
+//)};
 
 app.use(express.static(path.join(__dirname, 'public')));
 
