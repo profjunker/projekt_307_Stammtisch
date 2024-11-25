@@ -1,0 +1,19 @@
+{{>header}}
+
+<form action="" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Titel</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="short" class="form-label">Kurztext</label>
+        <input type="text" name="short" id="short" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="detail" class="form-label">Detail</label>
+        <textarea name="detail" id="detail" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Speichern</button>
+</form>
+
+{{>footer}}

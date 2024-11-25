@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stammtisch</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Font Awesome für das Burger-Icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="header">
+  <div class="logo">
+      <img class="logo" src="/images/Logo.png" alt="Logo von Stammtisch">
+  </div>
+
+   <!-- Burger-Icon, das das Menü ein- oder ausblendet -->
+   <div class="burger">
+    <span class="burger-icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </span>
+    </div>
+</div>
+<!-- Navigationslinks -->
+    <nav class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/feed">Feed</a>
+        <a href="#services">Suche</a>
+        <a href="#contact">Profil</a>
+    </nav>
+</header>
+<script>
+    // Funktion zum Umschalten der Sichtbarkeit des Menüs
+    function toggleMenu() {
+        var nav = document.getElementById("navLinks");
+        if (nav.style.display === "flex") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "flex";
+        }
+    }
+</script>
