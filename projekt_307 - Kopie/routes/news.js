@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', async function(req, res, next) {
+router.get('/news', async function(req, res, next) {
     let news = [];
     try {
          news = await req.db_connection.query('select * from news');
