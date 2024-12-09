@@ -3,6 +3,30 @@
     width: 100%;
 }
 
+h1 {
+    font-family: "Inika", serif;
+    color: white;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: "Inika", serif;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-links a {
+    color: white;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    font-size: 100px;
+    font-family: "Marlboro", "regular";
+    text-decoration: none;
+    display: block;
+}
+
 body {
     background-color: #272727;
     width: 100%;
@@ -86,16 +110,21 @@ header {
     justify-content:center ;
     background-color: #101010;
     bottom: 0;
-    width: calc(100% - 100px);
+    width: 100%;
     padding: 50px;
     text-align: center;
-    position: fixed;
 }
 
-.errortext{
-    font-family: "Marlboro", "regular";
-    color: white;
-    display: flex;
-    text-align: center;
-    font-size: 100px;
+.hero{
+    width: 100vw;
+    height: 80vh;
+    background-image: url('public/images/hero.jpg'); /* Pfad zum Bild */
+    background-size: cover; /* Bild skaliert, um den Container zu füllen */
+    background-position: center; /* Zentriert das Bild */
+    background-repeat: no-repeat; /* Verhindert Wiederholungen */
+}
+
+.hero_title{
+    position: absolute;
+    margin-top: 60vh;
 }
