@@ -13,8 +13,8 @@ main {
 
 header {
     background-color: #101010;
-    width: 100%;
     padding: 50px;
+    width: calc(100% - 100px);
 }
 
 .header {
@@ -85,7 +85,16 @@ header {
     justify-content:center ;
     background-color: #101010;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 100px);
     padding: 50px;
     text-align: center;
+    position: fixed;
+}
+
+.errortext{
+    font-family: "Marlboro", "regular";
+    color: white;
+    display: flex;
+    text-align: center;
+    font-size: 100px;
 }
