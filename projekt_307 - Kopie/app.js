@@ -18,6 +18,8 @@ const db_connection = new pg.Pool({
 
 var indexRouter = require('./routes/index');
 var newsRouter = require('./routes/news');
+var feedRouter = require('./routes/feed')
+
 //var usersRouter = require('./routes/users');
 
 var app = express();
@@ -42,6 +44,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/news', newsRouter);
+app.use('/feed', feedRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
