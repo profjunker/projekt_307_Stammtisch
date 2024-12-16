@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mustacheExpress = require('mustache-express')
 var pg = require('pg')
-require('dotenv').config()get
+require('dotenv').config()
 
 const db_connection = new pg.Pool({
  host: process.env.DB_HOST,
