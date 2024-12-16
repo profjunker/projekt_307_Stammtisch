@@ -118,7 +118,7 @@ header {
 .hero{
     width: 100vw;
     height: 80vh;
-    background-image: url('public/images/hero.jpg'); /* Pfad zum Bild */
+    background-image: url('/images/hero.jpg'); /* Pfad zum Bild */
     background-size: cover; /* Bild skaliert, um den Container zu füllen */
     background-position: center; /* Zentriert das Bild */
     background-repeat: no-repeat; /* Verhindert Wiederholungen */
