@@ -17,8 +17,12 @@ const db_connection = new pg.Pool({
 });
 
 var indexRouter = require('./routes/index');
-var newsRouter = require('./routes/news');
-var feedRouter = require('./routes/feed')
+var newsRouter = require('./routes/feed');
+var searchRouter = require('./routes/search')
+var feedRouter = require('./routes/test')
+var registerRouter = require('./routes/register');
+var loginRouter = require('./routes/login')
+var profileRouter = require('./routes/profile')
 
 //var usersRouter = require('./routes/users');
 
@@ -45,6 +49,10 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/news', newsRouter);
 app.use('/feed', feedRouter);
+app.use('/search', searchRouter);
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
+app.use('/profile', profileRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
