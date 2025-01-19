@@ -147,10 +147,8 @@ header {
 
 
 .errortext {
-    display: flex;
     text-align: center;
-    font-size: 100px;
-    color: white;
+    margin-top: 50px;
 }
 
 .footer{
@@ -182,4 +180,8 @@ header {
     position: absolute;
     margin-top: -20vh;
     margin-left: 30px;
+}
+
+.error_footer {
+    position: fixed;
 }

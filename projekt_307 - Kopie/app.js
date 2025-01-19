@@ -24,6 +24,18 @@ var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login')
 var profileRouter = require('./routes/profile')
 
+// Database pool setup
+const pool = new Pool({
+    host: "dpg-cu6kk48gph6c73c7o22g-a.frankfurt-postgres.render.com",
+    user: "tristan",
+    password: "CylE1s3YDYAREoJdB0Kr6oAOOX5qiW1E",
+    database: "stammtisch_9ot6",
+    port: 5432,
+    ssl: {
+        rejectUnauthorized: false, // Disable strict certificate validation
+    },
+});
+
 //var usersRouter = require('./routes/users');
 
 var app = express();
