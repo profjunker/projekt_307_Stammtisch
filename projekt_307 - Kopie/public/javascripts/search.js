@@ -45,8 +45,18 @@ document.addEventListener('DOMContentLoaded', function () {
             const div = document.createElement('div');
             div.classList.add('cocktail-item');
             div.innerHTML = `
-                <h2>${cocktail.titel}</h2>
-                <img src="${cocktail.image}" alt="Cocktail Bild" style="width: 200px; height: auto;" />
+<article class="article_cards">
+    <div class="feed_cards">
+            <a href="/feed_detail/${cocktail.id}">
+                <img src="${cocktail.image_path}" alt="" 
+                style="width: 784px !important;
+                       object-fit: cover;
+                       height: 500px;
+                ">
+            <h2>${cocktail.titel}</h2>
+            </a>
+        </div>
+    </article>
             `;
             resultsContainer.appendChild(div);
         });
