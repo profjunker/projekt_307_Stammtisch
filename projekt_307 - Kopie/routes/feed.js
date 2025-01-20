@@ -22,3 +22,12 @@ router.get("/", async (req, res, next) => {
 });
 
 module.exports = router;
+
+router.get('/', async function(req, res, next) {
+    const cocktails = [
+        { name: 'Mojito', image: '/images/mojito.jpg', description: 'Ein klassischer Rum-Cocktail' },
+        { name: 'Margarita', image: '/images/margarita.jpg', description: 'Tequila mit Limette' },
+        { name: 'Old Fashioned', image: '/images/old-fashioned.jpg', description: 'Ein traditioneller Whiskey-Drink' }
+    ];
+    res.json({ cocktails });
+});

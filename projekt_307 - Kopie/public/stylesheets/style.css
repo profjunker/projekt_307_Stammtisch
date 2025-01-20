@@ -181,3 +181,36 @@ header {
     margin-top: -20vh;
     margin-left: 30px;
 }
+
+.search-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 15px;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+#searchResults {
+    margin-top: 20px;
+}
+
+.cocktail-item {
+    background-color: #101010;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.cocktail-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
