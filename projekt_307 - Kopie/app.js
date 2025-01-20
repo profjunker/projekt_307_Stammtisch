@@ -24,6 +24,7 @@ const db_connection = new pg.Pool({
     ssl: true
 });
 
+
 //var usersRouter = require('./routes/users');
 
 var app = express();
@@ -71,4 +72,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/search', searchRouter);
 module.exports = app;
