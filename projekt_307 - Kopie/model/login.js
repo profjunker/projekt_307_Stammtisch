@@ -1,10 +1,10 @@
 class Login {
-    constructor(table, columns, pool) {
+    constructor(table, columns, db_connection) {
         this.table = table;
         this.columns = columns;
         this.emailColumn = columns[0];
         this.passwordColumn = columns[1];
-        this.pool = pool;
+        this.db_connection = db_connection;
     }
 
     async registerUser(req) {
@@ -17,13 +17,13 @@ class Login {
             placeholders.push(`$${i + 1}`);
         }
 
-        const result = await this.pool.query(
+        const result = await this.db_connection.query(
             `INSERT INTO ${this.table} (${this.columns.join(
                 ", "
             )}) VALUES (${placeholders.join(", ")}) RETURNING id`,
             values,
         );
-        const users = await this.pool.query(
+        const users = await this.db_connection.query(
             `SELECT * FROM ${this.table} WHERE id = $1`,
             [result.rows[0].id],
         );
@@ -34,7 +34,7 @@ class Login {
         if (!req.session.userid) {
             return false;
         }
-        const users = await this.pool.query(
+        const users = await this.db_connection.query(
             `SELECT * FROM ${this.table} WHERE id = $1`,
             [req.session.userid],
         );
@@ -53,7 +53,7 @@ class Login {
             console.log("Attempting login for email:", email);
 
             // Query the database for the user
-            const users = await this.pool.query(
+            const users = await this.db_connection.query(
                 `SELECT * FROM ${this.table} WHERE ${this.emailColumn} = $1`,
                 [email],
             );
@@ -64,13 +64,13 @@ class Login {
             }
 
             const user = users.rows[0];
-            console.log("User retrieved from database:", user);
+            console.log("User retrieved from database:", users);
 
             // Compare plain passwords
-            if (password === user[this.passwordColumn]) {
-                req.session.userid = user.id.toString();
-                console.log("Login successful for user:", user.id);
-                return user; // Successful login
+            if (password === users[this.passwordColumn]) {
+                req.session.userid = users.id.toString();
+                console.log("Login successful for user:", users.id);
+                return users; // Successful login
             }
 
             console.error("Login failed: password mismatch");

@@ -1,15 +1,16 @@
 {{>header}}
 
-<!--
-Hier folgt dann der einzelne Eintrag
--->
-
-<div class="entry">
-    <h2>News Eintrag 1</h2>
-    <span class="date">11.11.2024</span>
-    <p>Der aktuelle Newseintrag von 1</p>
-    <p>Der grosse Inhalt des Newsbeitrages...mit viel Text</p>
-    <span>Autor: Enrico</span>
-</div>
+<main class="detail">
+{{#drinks}}
+    <h1>{{drinks.titel}}</h1>
+    <img src="{{image_path}}" alt="">
+    <h2>Beschreibung</h2>
+    <p>{{drinks.beschreibung}}</p>
+    <h2>Zutaten</h2>
+    <p>{{drinks.zutaten}}</p>
+    <h2>Zubereitung</h2>
+    <p>{{drinks.zubereitung}}</p>
+   {{/drinks}}
+</main>
 
 {{>footer}}

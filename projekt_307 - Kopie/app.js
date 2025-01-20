@@ -8,12 +8,13 @@ var pg = require('pg')
 require('dotenv').config()
 
 var indexRouter = require('./routes/index');
-var newsRouter = require('./routes/feed');
-var searchRouter = require('./routes/search')
-var feedRouter = require('./routes/test')
+var searchRouter = require('./routes/search');
+var feedRouter = require('./routes/feed');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login')
 var profileRouter = require('./routes/profile')
+var feeddetailRouter = require('./routes/feed_detail');
+
 
 const db_connection = new pg.Pool({
     host: "dpg-cu6kk48gph6c73c7o22g-a.frankfurt-postgres.render.com",
@@ -27,6 +28,13 @@ const db_connection = new pg.Pool({
 //var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Attach shared resources to requests
+app.use((req, res, next) => {
+    req.db_connection = db_connection; // Attach the database pool
+    req.login = new Login("users", ["email", "password"], db_connection); // Attach the Login instance
+    next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,15 +53,20 @@ app.use((req, res, next) => {
   next();
 });
 
+const Login = require("./model/login");
+
+
 
 app.use('/', indexRouter);
-app.use('/news', newsRouter);
 app.use('/feed', feedRouter);
 app.use('/search', searchRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/profile', profileRouter);
-//app.use('/users', usersRouter);
+app.use('/feed_detail', feeddetailRouter);
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

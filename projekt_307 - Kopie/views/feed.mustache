@@ -2,13 +2,16 @@
 
 <main>
     <article class="article_cards">
+    {{#drinks}}
     <div class="feed_cards">
-            <a href="#">
-                <img src="#" alt="">
+            <a href="/feed_detail/{{id}}">
+                <img src="{{image_path}}" alt="">
+            <h2>{{titel}}</h2>
             </a>
-            <h2>{{drinks.titel}}</h2>
-        </div>
-    </article>
+    </div>
+    {{/drinks}}
+</article>
 </main>
 
 {{> footer}}
+
