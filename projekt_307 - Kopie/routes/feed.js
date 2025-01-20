@@ -18,7 +18,6 @@ router.get("/", async (req, res, next) => {
         console.error("Error fetching blogs for index page:", err);
         res.status(500).render("error", { message: "Internal Server Error" });
     }
-/* GET home page. */
 });
 
 module.exports = router;

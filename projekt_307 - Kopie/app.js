@@ -8,12 +8,12 @@ var pg = require('pg')
 require('dotenv').config()
 
 var indexRouter = require('./routes/index');
-var newsRouter = require('./routes/feed');
-var searchRouter = require('./routes/search')
-var feedRouter = require('./routes/feed')
+var searchRouter = require('./routes/search');
+var feedRouter = require('./routes/feed');
 var registerRouter = require('./routes/register');
-var loginRouter = require('./routes/login')
-var profileRouter = require('./routes/profile')
+var loginRouter = require('./routes/login');
+var profileRouter = require('./routes/profile');
+var feeddetailRouter = require('./routes/feed_detail');
 
 const db_connection = new pg.Pool({
     host: "dpg-cu6kk48gph6c73c7o22g-a.frankfurt-postgres.render.com",
@@ -47,12 +47,12 @@ app.use((req, res, next) => {
 
 
 app.use('/', indexRouter);
-app.use('/news', newsRouter);
 app.use('/feed', feedRouter);
 app.use('/search', searchRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/profile', profileRouter);
+app.use('/feed_detail', feeddetailRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

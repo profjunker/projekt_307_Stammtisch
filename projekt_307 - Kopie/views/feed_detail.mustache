@@ -1,8 +1,16 @@
 {{>header}}
 
-<main>
-   <h2>{{drinks.titel}}</h2>
-   <img src="#" alt="">
+<main class="detail">
+{{#drinks}}
+    <h1>{{drinks.titel}}</h1>
+    <img src="{{image_path}}" alt="">
+    <h2>Beschreibung</h2>
+    <p>{{drinks.beschreibung}}</p>
+    <h2>Zutaten</h2>
+    <p>{{drinks.zutaten}}</p>
+    <h2>Zubereitung</h2>
+    <p>{{drinks.zubereitung}}</p>
+   {{/drinks}}
 </main>
 
 {{>footer}}
