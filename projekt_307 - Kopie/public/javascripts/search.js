@@ -40,14 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         cocktails.forEach(cocktail => {
-            console.log('Cocktail wird angezeigt:', cocktail.name);
+            console.log('Cocktail wird angezeigt:', cocktail.titel);
 
             const div = document.createElement('div');
             div.classList.add('cocktail-item');
             div.innerHTML = `
-                <h3>${cocktail.name}</h3>
+                <h2>${cocktail.titel}</h2>
                 <img src="${cocktail.image}" alt="Cocktail Bild" style="width: 200px; height: auto;" />
-                <p>${cocktail.description}</p>
             `;
             resultsContainer.appendChild(div);
         });
@@ -58,14 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const searchTerm = searchInput.value.toLowerCase();
         const cocktails = await fetchCocktails();
+
+        if (!Array.isArray(cocktails)) {
+            console.error('Fehler: Cocktails ist kein Array', cocktails);
+            return;
+        }
+
         const filteredCocktails = cocktails.filter(cocktail =>
-            cocktail.name.toLowerCase().includes(searchTerm)
+            cocktail.titel && typeof cocktail.titel === 'string' &&
+            cocktail.titel.toLowerCase().includes(searchTerm)
         );
 
         console.log('Gefilterte Cocktails:', filteredCocktails);
         renderResults(filteredCocktails);
     });
-
-    // Initial leere Ergebnisse
-    renderResults([]);
 });
