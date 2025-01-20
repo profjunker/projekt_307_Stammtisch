@@ -7,33 +7,21 @@ var mustacheExpress = require('mustache-express')
 var pg = require('pg')
 require('dotenv').config()
 
-const db_connection = new pg.Pool({
- host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT,
-  ssl: true
-});
-
 var indexRouter = require('./routes/index');
 var newsRouter = require('./routes/feed');
 var searchRouter = require('./routes/search')
-var feedRouter = require('./routes/test')
+var feedRouter = require('./routes/feed')
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login')
 var profileRouter = require('./routes/profile')
 
-// Database pool setup
-const pool = new Pool({
+const db_connection = new pg.Pool({
     host: "dpg-cu6kk48gph6c73c7o22g-a.frankfurt-postgres.render.com",
     user: "tristan",
     password: "CylE1s3YDYAREoJdB0Kr6oAOOX5qiW1E",
     database: "stammtisch_9ot6",
     port: 5432,
-    ssl: {
-        rejectUnauthorized: false, // Disable strict certificate validation
-    },
+    ssl: true
 });
 
 //var usersRouter = require('./routes/users');
